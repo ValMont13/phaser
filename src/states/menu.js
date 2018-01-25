@@ -1,5 +1,6 @@
 class Menu extends Phaser.State {
 
+
   constructor() {
     super();
   }
@@ -16,6 +17,9 @@ class Menu extends Phaser.State {
   update() {}
 
   startGame () {
+    if (!this.game.global.fullscreenManager.isFullScreen) {
+        this.game.global.fullscreenManager.run();
+    }
     this.game.state.start('game');
   }
 
